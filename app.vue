@@ -5,6 +5,7 @@
       <Hero />
       <About ref="aboutSection" class="animated-section"/>
       <Services ref="servicesSection" class="animated-section"/>
+      <Team ref="teamSection" class="animated-section" />
       <Contact ref="contactSection" class="animated-section"/>
     </main>
     <Footer />
@@ -18,17 +19,20 @@ import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import About from './components/About.vue';
 import Services from './components/Services.vue';
+import Team from './components/Team.vue';
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
 
 const aboutSection = ref(null);
 const servicesSection = ref(null);
+const teamSection = ref(null);
 const contactSection = ref(null);
 
 onMounted(() => {
   const sections = [
     aboutSection.value?.$el,
     servicesSection.value?.$el,
+    teamSection.value?.$el,
     contactSection.value?.$el
   ];
 
