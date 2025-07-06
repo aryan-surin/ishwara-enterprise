@@ -3,12 +3,13 @@
     <div class="container">
       <div class="logo">
         <!-- TODO: Replace with your actual logo -->
-        <img src="/images/logo.png" alt="Ishwara Enterprise Logo" />
+        <img src="/images/logo.png" alt="Ishwara Enterprise Logo" :class="{ 'blend-logo': !isScrolled }" />
       </div>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -67,8 +68,13 @@ onUnmounted(() => {
   transition: height 0.4s ease;
 }
 
+.logo img.blend-logo {
+  mix-blend-mode: screen;
+}
+
 .header.scrolled .logo img {
   height: 40px;
+  mix-blend-mode: normal;
 }
 
 nav ul {
