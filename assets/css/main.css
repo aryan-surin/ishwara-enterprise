@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+:root {
+  --primary-color: #0d2c54; /* Dark Blue */
+  --accent-color: #fbb03b; /* Gold */
+  --background-color: #fdfdfd; /* Off-White */
+  --text-color: #333333; /* Dark Gray */
+  --heading-font: 'Playfair Display', serif;
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    padding: 8rem 2rem;
+    overflow: hidden; /* For animations */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
