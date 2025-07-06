@@ -16,7 +16,7 @@
 import { ref, onMounted } from 'vue';
 
 const videoPlayer = ref(null);
-const videos = ['/videos/hero2.mp4', '/videos/hero2.mp4'];
+const videos = ['/videos/hero.mp4', '/videos/hero2.mp4'];
 const currentVideoIndex = ref(0);
 const currentVideo = ref(videos[currentVideoIndex.value]);
 
