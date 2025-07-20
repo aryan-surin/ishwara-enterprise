@@ -147,25 +147,25 @@ const hoveredCard = ref(-1);
 const services = ref([
   {
     title: 'Construction',
-    icon: 'https://placehold.co/64x64/fbb03b/0d2c54?text=C',
+    icon: '/images/placeholders/service-construction.png',
     items: ['Residential & Commercial', 'Renovation & Remodeling', 'Road & Civil Works'],
     description: 'Professional construction services with modern techniques and quality materials'
   },
   {
     title: 'Security Systems',
-    icon: 'https://placehold.co/64x64/fbb03b/0d2c54?text=S',
+    icon: '/images/placeholders/service-security.png',
     items: ['CCTV Installation & Maintenance', 'Video Surveillance Setup', 'Remote Monitoring'],
     description: 'Advanced security solutions to protect your assets and ensure peace of mind'
   },
   {
     title: 'Fire Protection',
-    icon: 'https://placehold.co/64x64/fbb03b/0d2c54?text=F',
+    icon: '/images/placeholders/service-fire.png',
     items: ['Fire Alarm Installation', 'Fire Extinguisher Supply', 'Fire Safety Inspections'],
     description: 'Comprehensive fire safety systems and emergency response solutions'
   },
   {
     title: 'IT Services',
-    icon: 'https://placehold.co/64x64/fbb03b/0d2c54?text=IT',
+    icon: '/images/placeholders/service-it.png',
     items: ['Hardware Supply & Installation', 'Network Setup & Maintenance', 'Server Support'],
     description: 'Complete IT infrastructure solutions for modern business needs'
   }

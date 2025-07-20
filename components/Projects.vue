@@ -495,8 +495,12 @@ const handleProjectHover = (index, isHovered) => {
 };
 
 const handleImageError = (event) => {
-  // Fallback to a placeholder image
-  event.target.src = 'https://via.placeholder.com/600x400/0D2C54/ffffff?text=Project+Image';
+  // Fallback to a local placeholder image to prevent network errors
+  event.target.src = '/images/placeholders/project-placeholder.jpg';
+  // Add a class to indicate a fallback image is used
+  event.target.classList.add('placeholder-image');
+  // Prevent an infinite loop if the placeholder also fails to load
+  event.target.onerror = null;
 };
 
 const viewProject = (project) => {

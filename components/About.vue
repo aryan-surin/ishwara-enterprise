@@ -31,7 +31,7 @@
         >
           <div class="image-wrapper">
             <img 
-              src="https://placehold.co/600x400/0d2c54/fbb03b?text=Our+Story" 
+              src="/images/placeholders/about-story.jpg" 
               alt="About Ishwara Enterprise"
               class="parallax-element"
               ref="parallaxImage"
