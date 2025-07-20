@@ -47,6 +47,12 @@
           class="section-container animated-section"
         />
         
+        <!-- Projects Section -->
+        <Projects 
+          ref="projectsSection" 
+          class="section-container animated-section"
+        />
+        
         <!-- Team Section -->
         <Team 
           ref="teamSection" 
@@ -93,6 +99,7 @@ import Header from './components/Header.vue';
 import Hero from './components/Hero.vue';
 import About from './components/About.vue';
 import Services from './components/Services.vue';
+import Projects from './components/Projects.vue';
 import Team from './components/Team.vue';
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
@@ -110,6 +117,7 @@ const showCursorFollower = ref(false);
 const heroSection = ref(null);
 const aboutSection = ref(null);
 const servicesSection = ref(null);
+const projectsSection = ref(null);
 const teamSection = ref(null);
 const contactSection = ref(null);
 const cursorFollower = ref(null);
@@ -196,6 +204,7 @@ const initializeSectionObservers = () => {
   const sections = [
     aboutSection.value?.$el,
     servicesSection.value?.$el,
+    projectsSection.value?.$el,
     teamSection.value?.$el,
     contactSection.value?.$el
   ].filter(Boolean);
@@ -244,6 +253,9 @@ const triggerSectionAnimations = (sectionElement) => {
       break;
     case 'services':
       animateServicesSection(sectionElement);
+      break;
+    case 'projects':
+      animateProjectsSection(sectionElement);
       break;
     case 'team':
       animateTeamSection(sectionElement);
@@ -298,6 +310,21 @@ const animateServicesSection = (section) => {
       duration: 1, 
       stagger: 0.15,
       ease: "back.out(1.7)"
+    }
+  );
+};
+
+const animateProjectsSection = (section) => {
+  const cards = section.querySelectorAll('.project-card');
+  window.gsap.fromTo(cards, 
+    { y: 80, opacity: 0, rotationX: -15 },
+    { 
+      y: 0, 
+      opacity: 1, 
+      rotationX: 0,
+      duration: 0.8, 
+      stagger: 0.2,
+      ease: "power2.out"
     }
   );
 };

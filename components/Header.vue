@@ -146,6 +146,12 @@ const navigationItems = ref([
     icon: 'ServicesIcon'
   },
   { 
+    id: 'projects', 
+    text: 'Projects', 
+    href: '#projects',
+    icon: 'ProjectsIcon'
+  },
+  { 
     id: 'team', 
     text: 'Team', 
     href: '#team',
@@ -174,7 +180,7 @@ const handleScroll = () => {
  * Update Active Section Based on Scroll Position
  */
 const updateActiveSection = () => {
-  const sections = ['hero', 'about', 'services', 'team', 'contact'];
+  const sections = ['hero', 'about', 'services', 'projects', 'team', 'contact'];
   const scrollPosition = window.scrollY + 100; // Offset for better UX
   
   for (const sectionId of sections) {
@@ -805,6 +811,17 @@ const ServicesIcon = {
   `
 };
 
+const ProjectsIcon = {
+  template: `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+      <path d="M9 9h6v6H9z"/>
+      <path d="M21 15v4a2 2 0 01-2 2h-4"/>
+      <path d="M3 9V5a2 2 0 012-2h4"/>
+    </svg>
+  `
+};
+
 const TeamIcon = {
   template: `
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -825,5 +842,5 @@ const ContactIcon = {
   `
 };
 
-export { AboutIcon, ServicesIcon, TeamIcon, ContactIcon };
+export { AboutIcon, ServicesIcon, ProjectsIcon, TeamIcon, ContactIcon };
 </script>

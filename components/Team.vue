@@ -59,7 +59,7 @@
             <!-- Profile Image Section -->
             <div class="member-image-container">
               <div class="image-wrapper">
-                <img :src="member.image" :alt="member.name" class="member-image">
+                <img :src="member.image" :alt="member.name" class="member-image" @error="handleImageError">
                 
                 <!-- Hover Overlay -->
                 <div class="image-overlay">
@@ -174,7 +174,7 @@ const teamMembers = ref([
   { 
     name: 'John Doe', 
     role: 'CEO & Founder', 
-    image: '/images/team/member1.jpg',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
     description: 'Visionary leader with 20+ years of industry experience',
     skills: ['Leadership', 'Strategy', 'Business Development'],
     status: 'online',
@@ -187,7 +187,7 @@ const teamMembers = ref([
   { 
     name: 'Jane Smith', 
     role: 'Chief Technology Officer', 
-    image: '/images/team/member2.jpg',
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b300?w=400&h=400&fit=crop&crop=face',
     description: 'Technical expert specializing in innovative solutions',
     skills: ['Technology', 'Innovation', 'Team Management'],
     status: 'online',
@@ -200,7 +200,7 @@ const teamMembers = ref([
   { 
     name: 'Peter Jones', 
     role: 'Lead Developer', 
-    image: '/images/team/member3.jpg',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
     description: 'Full-stack developer with expertise in modern technologies',
     skills: ['Development', 'Architecture', 'DevOps'],
     status: 'busy',
@@ -213,7 +213,7 @@ const teamMembers = ref([
   { 
     name: 'Sarah Williams', 
     role: 'Project Manager', 
-    image: '/images/team/member4.jpg',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
     description: 'Experienced project manager ensuring timely delivery',
     skills: ['Project Management', 'Agile', 'Communication'],
     status: 'online',
@@ -258,6 +258,14 @@ const handleMemberHover = (index, isHovered) => {
       });
     }
   }
+};
+
+/**
+ * Handle Image Loading Errors
+ */
+const handleImageError = (event) => {
+  // Fallback to a default avatar if image fails to load
+  event.target.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(event.target.alt) + '&size=400&background=0D2C54&color=fff';
 };
 
 /**
